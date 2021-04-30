@@ -1,18 +1,18 @@
 // // Arithmetic Operators
 // // + - * / % ++ --
 
-// var a = 11
-// var b = 5
+var a = 11
+var b = 5
 
 // console.log(a + b)
 // console.log(a - b)
 // console.log(a * b)
 // console.log(a / b)
 // console.log(a % b)
-// console.log(a++)        // Post incremental
-// console.log(++a)        // Pre incremental
-// console.log(a--)        // Post decremental
-// console.log(--a)        // Pre decremental 
+console.log(a++)        // Post incremental
+console.log(++a)        // Pre incremental
+console.log(a--)        // Post decremental
+console.log(--a)        // Pre decremental 
 
 
 // // Assignment operator
@@ -58,7 +58,7 @@
 // >>
 // <<
 
-// Type of operator
-a = 'abc'
+// // Type of operator
+// a = 'abc'
 
-console.log(typeof a)
+// console.log(typeof a)
