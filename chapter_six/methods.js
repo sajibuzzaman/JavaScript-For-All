@@ -19,6 +19,6 @@ var arr2 = [3, 5, 7, 6, 4]
 var arr4 = Array.from(arr)
 console.log(arr4)
 
-//  from array for copy a array but if it change any data its effect previous array
+// for copy a array but if it change any data its effect previous array
 var arr5 = arr
 console.log(arr5)
