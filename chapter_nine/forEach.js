@@ -7,6 +7,8 @@ arr.forEach(function(value, index, array){
 })
 console.log(sum)
 
+
+
 // **How its work in backend**
 function forEach(arr, cb) {
     for(var i=0; i<arr.length; i++) {
