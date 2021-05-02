@@ -6,6 +6,8 @@ var sqrArr = arr.map(function(value, index, array){
 console.log(arr)
 console.log(sqrArr)
 
+
+
 // **How its work in backend**
 function map(arr, cb) {
     var newArr = []
