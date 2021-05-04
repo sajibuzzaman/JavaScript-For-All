@@ -85,5 +85,18 @@ var Rectangle = function(width, height) {
      }
 }
 
-var rect1 = new Rectangle(5, 8)
+// var rect1 = new Rectangle(5, 8)
+// rect1.draw()
+
+// ***new how its work**
+function myNew(constructor) {
+    var obj ={}
+    Object.setPrototypeOf(obj, constructor.prototype)
+    var argsArray = Array.prototype.slice.apply(arguments)
+    constructor.apply(obj, argsArray.slice(1))
+
+    return obj
+}
+
+var rect1 = myNew(Rectangle, 20, 50)
 rect1.draw()
