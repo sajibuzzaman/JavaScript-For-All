@@ -67,36 +67,55 @@
 // rect3.draw()
 
 
-// ***Constructor Pattern***
-var Rectangle = function(width, height) {
-     // properties
-     this.width = width
-     this.height = height
+// // ***Constructor Pattern***
+// var Rectangle = function(width, height) {
+//      // properties
+//      this.width = width
+//      this.height = height
 
-     // method
-     this.draw = function() {
-         console.log('I am a Rectangle')
-         this.printPropertie()
-     }
+//      // method
+//      this.draw = function() {
+//          console.log('I am a Rectangle')
+//          this.printPropertie()
+//      }
  
-     this.printPropertie = function(){
-         console.log('My Width is', this.width)
-         console.log('My Height is', this.height)
-     }
-}
+//      this.printPropertie = function(){
+//          console.log('My Width is', this.width)
+//          console.log('My Height is', this.height)
+//      }
+// }
 
-// var rect1 = new Rectangle(5, 8)
+// // var rect1 = new Rectangle(5, 8)
+// // rect1.draw()
+
+// // ***new how its work**
+// function myNew(constructor) {
+//     var obj ={}
+//     Object.setPrototypeOf(obj, constructor.prototype)
+//     var argsArray = Array.prototype.slice.apply(arguments)
+//     constructor.apply(obj, argsArray.slice(1))
+
+//     return obj
+// }
+
+// var rect1 = myNew(Rectangle, 20, 50)
 // rect1.draw()
 
-// ***new how its work**
-function myNew(constructor) {
-    var obj ={}
-    Object.setPrototypeOf(obj, constructor.prototype)
-    var argsArray = Array.prototype.slice.apply(arguments)
-    constructor.apply(obj, argsArray.slice(1))
+// ***Function is a object proved**
+var Rect = new Function('width', 'height', `this.width = width
+    this.height = height
 
-    return obj
-}
+    // method
+    this.draw = function() {
+        console.log('I am a Rectangle')
+        this.printPropertie()
+    }
 
-var rect1 = myNew(Rectangle, 20, 50)
+    this.printPropertie = function(){
+        console.log('My Width is', this.width)
+        console.log('My Height is', this.height)
+    }`
+)
+
+var rect1 = new Rect(5, 6)
 rect1.draw()
