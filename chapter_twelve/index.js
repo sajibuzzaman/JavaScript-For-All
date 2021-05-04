@@ -38,30 +38,52 @@
 // test.print()
 
 
-// **factory pattern**
-var createRect = function(width, height) {
-    return {
-        // properties
-        width: width,
-        height: height,
+// // **factory pattern**
+// var createRect = function(width, height) {
+//     return {
+//         // properties
+//         width: width,
+//         height: height,
 
-        // method
-        draw: function() {
-            console.log('I am a Rectangle')
-            this.printPropertie()
-        },
+//         // method
+//         draw: function() {
+//             console.log('I am a Rectangle')
+//             this.printPropertie()
+//         },
     
-        printPropertie: function(){
-            console.log('My Width is', this.width)
-            console.log('My Height is', this.height)
-        }
-    }
+//         printPropertie: function(){
+//             console.log('My Width is', this.width)
+//             console.log('My Height is', this.height)
+//         }
+//     }
 
+// }
+
+// var rect1 = createRect(20, 200)
+// var rect2 = createRect(40, 400)
+// var rect3 = createRect(50, 500)
+// rect1.draw()
+// rect2.draw()
+// rect3.draw()
+
+
+// ***Constructor Pattern***
+var Rectangle = function(width, height) {
+     // properties
+     this.width = width
+     this.height = height
+
+     // method
+     this.draw = function() {
+         console.log('I am a Rectangle')
+         this.printPropertie()
+     }
+ 
+     this.printPropertie = function(){
+         console.log('My Width is', this.width)
+         console.log('My Height is', this.height)
+     }
 }
 
-var rect1 = createRect(20, 200)
-var rect2 = createRect(40, 400)
-var rect3 = createRect(50, 500)
+var rect1 = new Rectangle(5, 8)
 rect1.draw()
-rect2.draw()
-rect3.draw()
