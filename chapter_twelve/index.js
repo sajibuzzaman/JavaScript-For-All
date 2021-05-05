@@ -121,18 +121,70 @@
 // rect1.draw()
 
 
-// ***Bind Call Apply***
-function test(c, d){
-    console.log(this.a + this.b + c + d)
+// // ***Bind Call Apply***
+// function test(c, d){
+//     console.log(this.a + this.b + c + d)
+// }
+
+// test.call({a: 2, b: 3}, 2, 3)
+// test.apply({a: 2, b: 3}, [2, 3])
+// // bind
+// test.bind({a: 2, b: 3}, 2, 3)()
+
+// var testBind = test.bind({a: 2, b: 3}, 2, 3)
+// testBind()
+
+// var testBind = test.bind({a: 2, b: 3})
+// testBind(2, 3)
+
+
+// // ***Pass by value vs Pass by refrence**
+// // ***Call by value vs Call by refrence**
+// var n = 10
+
+// function test(n) {
+//     n = n+100
+//     console.log(n)
+// }
+
+// test(n)
+// console.log(n)   //its not change value of n and its pass by value
+
+// var obj = {
+//     a: 10,
+//     b: 20
+// }
+
+// function test1(obj) {
+//     obj.a = obj.a+100
+//     obj.b = obj.b+100
+//     console.log(obj.a, obj.b)
+// }
+// test1(obj)
+// console.log(obj)  //its change value of obj so it is mutable object and its pass by refrence
+
+
+// ***Abstraction( Hidden unnecessary things)***
+var Rectangle = function(width, height) {
+    this.width = width
+    this.height = height
+    // Abstarct postion and printProperties
+    var postion = {
+        x: 45,
+        y: -45 
+    }
+
+    var printProperties = function() {
+        console.log('My width is', this.width)
+        console.log('My height is', this.height)
+    }.bind(this)
+
+    this.draw = function() {
+        console.log('I am a Rectangle')
+        printProperties()
+        console.log('X position = ' + postion.x + ', ' + 'Y postion = ' + postion.y)
+    }
 }
 
-test.call({a: 2, b: 3}, 2, 3)
-test.apply({a: 2, b: 3}, [2, 3])
-// bind
-test.bind({a: 2, b: 3}, 2, 3)()
-
-var testBind = test.bind({a: 2, b: 3}, 2, 3)
-testBind()
-
-var testBind = test.bind({a: 2, b: 3})
-testBind(2, 3)
+var rect = new Rectangle(20, 30)
+rect.draw()
