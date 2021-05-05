@@ -168,8 +168,8 @@
 var Rectangle = function(width, height) {
     this.width = width
     this.height = height
-    // Abstarct postion and printProperties
-    var postion = {
+    // Abstarct position and printProperties
+    var position = {
         x: 45,
         y: -45 
     }
@@ -179,12 +179,34 @@ var Rectangle = function(width, height) {
         console.log('My height is', this.height)
     }.bind(this)
 
+    // this.getPositon = function() {
+    //     return position
+    // }
+
     this.draw = function() {
         console.log('I am a Rectangle')
         printProperties()
-        console.log('X position = ' + postion.x + ', ' + 'Y postion = ' + postion.y)
+        console.log('X position = ' + position.x + ', ' + 'Y postion = ' + position.y)
     }
+    // **Getter and Setter**
+    Object.defineProperty(this, 'position', {
+        get: function() {
+            return position
+        },
+        set: function(value) {
+            position = value
+        }
+    })
 }
 
 var rect = new Rectangle(20, 30)
 rect.draw()
+
+// console.log(rect.getPositon())
+// **call by getter and setter**
+console.log(rect.position)
+rect.position = {
+    x: 8,
+    y: -8
+}
+console.log(rect.position)
