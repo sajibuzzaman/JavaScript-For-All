@@ -101,21 +101,38 @@
 // var rect1 = myNew(Rectangle, 20, 50)
 // rect1.draw()
 
-// ***Function is a object proved**
-var Rect = new Function('width', 'height', `this.width = width
-    this.height = height
+// // ***Function is a object proved**
+// var Rect = new Function('width', 'height', `this.width = width
+//     this.height = height
 
-    // method
-    this.draw = function() {
-        console.log('I am a Rectangle')
-        this.printPropertie()
-    }
+//     // method
+//     this.draw = function() {
+//         console.log('I am a Rectangle')
+//         this.printPropertie()
+//     }
 
-    this.printPropertie = function(){
-        console.log('My Width is', this.width)
-        console.log('My Height is', this.height)
-    }`
-)
+//     this.printPropertie = function(){
+//         console.log('My Width is', this.width)
+//         console.log('My Height is', this.height)
+//     }`
+// )
 
-var rect1 = new Rect(5, 6)
-rect1.draw()
+// var rect1 = new Rect(5, 6)
+// rect1.draw()
+
+
+// ***Bind Call Apply***
+function test(c, d){
+    console.log(this.a + this.b + c + d)
+}
+
+test.call({a: 2, b: 3}, 2, 3)
+test.apply({a: 2, b: 3}, [2, 3])
+// bind
+test.bind({a: 2, b: 3}, 2, 3)()
+
+var testBind = test.bind({a: 2, b: 3}, 2, 3)
+testBind()
+
+var testBind = test.bind({a: 2, b: 3})
+testBind(2, 3)
