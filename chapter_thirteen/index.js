@@ -51,3 +51,28 @@
 
 
 // ***Instance and Prototype Member***
+function Square(width) {
+    // Instance member
+    this.width = width
+}
+
+Square.prototype = {
+    // prototype member
+    draw: function() {
+        console.log('Draw')
+    },
+    // override toString method
+    toString: function() {
+        console.log('My width is ' + this.width)
+    }
+}
+
+var sqr1 = new Square(20)
+var sqr2 = new Square(30)
+
+// console.log(sqr1)
+// console.log(sqr2)
+// console.log(sqr1.draw())
+// console.log(sqr2.draw())
+console.log(sqr1.toString())
+console.log(sqr2.toString())
