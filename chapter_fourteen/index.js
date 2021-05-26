@@ -2,10 +2,8 @@ function Shape(){
 
 }
 
-Shape.prototype = {
-    common: function(){
-        console.log('I am common function')
-    }
+Shape.prototype.common = function() {
+    console.log('I am common function')
 }
 
 // inherite Shape function
@@ -14,6 +12,7 @@ function Square(width) {
 }
 
 Square.prototype = Object.create(Shape.prototype)
+Square.prototype.constructor = Square
 
 Square.prototype.draw = function() {
     console.log('I am drawing')
@@ -22,12 +21,12 @@ Square.prototype.draw = function() {
 var sqr1 = new Square(50)
 sqr1.common()
 
-// inherite Shape function
-function Circle() {
-    console.log('I am Circle')
-}
+// // inherite Shape function
+// function Circle() {
+//     console.log('I am Circle')
+// }
 
-Circle.prototype = Object.create(Shape.prototype)
+// Circle.prototype = Object.create(Shape.prototype)
 
-var circle1 = new Circle()
-circle1.common()
+// var circle1 = new Circle()
+// circle1.common()
