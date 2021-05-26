@@ -1,4 +1,5 @@
-function Shape(){
+function Shape(color){
+    this.color = color
 
 }
 
@@ -7,7 +8,8 @@ Shape.prototype.common = function() {
 }
 
 // inherite Shape function
-function Square(width) {
+function Square(width, color) {
+    Shape.call(this, color)
     this.width = width
 }
 
@@ -19,7 +21,7 @@ Square.prototype.draw = function() {
     console.log('I am drawing')
 }
 
-var sqr1 = new Square(50)
+var sqr1 = new Square(50, 'green')
 sqr1.common()
 
 // // inherite Shape function
