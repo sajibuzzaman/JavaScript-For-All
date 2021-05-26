@@ -1,3 +1,9 @@
+function extend(parent, child) {
+    child.prototype = Object.create(parent.prototype)
+    // reset constructor
+    child.prototype.constructor = child
+}
+
 function Shape(color){
     this.color = color
 
@@ -13,9 +19,7 @@ function Square(width, color) {
     this.width = width
 }
 
-Square.prototype = Object.create(Shape.prototype)
-// reset constructor
-Square.prototype.constructor = Square
+extend(Shape, Square)
 
 Square.prototype.draw = function() {
     console.log('I am drawing')
@@ -24,12 +28,13 @@ Square.prototype.draw = function() {
 var sqr1 = new Square(50, 'green')
 sqr1.common()
 
-// // inherite Shape function
-// function Circle() {
-//     console.log('I am Circle')
-// }
+// inherite Shape function
+function Circle(radius, color) {
+    Shape.call(this, color)
+    this.radius = radius
+}
 
-// Circle.prototype = Object.create(Shape.prototype)
+extend(Shape, Circle)
 
-// var circle1 = new Circle()
-// circle1.common()
+var circle1 = new Circle(20, 'red')
+circle1.common()
