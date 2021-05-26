@@ -54,16 +54,20 @@
 function Square(width) {
     // Instance member
     this.width = width
+    this.getWidth = function(){
+        console.log( 'Width is ' + this.width)
+    }
 }
 
 Square.prototype = {
     // prototype member
     draw: function() {
+        this.getWidth()
         console.log('Draw')
     },
     // override toString method
     toString: function() {
-        console.log('My width is ' + this.width)
+        return 'My width is ' + this.width
     }
 }
 
@@ -74,5 +78,19 @@ var sqr2 = new Square(30)
 // console.log(sqr2)
 // console.log(sqr1.draw())
 // console.log(sqr2.draw())
-console.log(sqr1.toString())
+console.log(sqr1.draw())
 console.log(sqr2.toString())
+
+// for instance property
+console.log(Object.keys(sqr1))
+
+// for instance and prototype property
+for(var i in sqr1) {
+    console.log(i)
+}
+
+// Check own property
+console.log(sqr1.hasOwnProperty('width'))
+console.log(sqr1.hasOwnProperty('getWidth'))
+console.log(sqr1.hasOwnProperty('draw'))
+console.log(sqr1.hasOwnProperty('toString'))
