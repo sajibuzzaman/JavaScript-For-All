@@ -35,6 +35,11 @@ function Circle(radius, color) {
 }
 
 extend(Shape, Circle)
+// method overriding
+Circle.prototype.common = function() {
+    Shape.prototype.common.call(this)
+    console.log('I am calling from Circle and I am overriden')
+}
 
 var circle1 = new Circle(20, 'red')
 circle1.common()
