@@ -69,8 +69,19 @@ import '../styles/index.scss'
 //     return a + b
 // }
 
-let add  = (a, b) => a + b
-console.log(add(5,6))
+// let add  = (a, b) => a + b
+// console.log(add(5,6))
 
-let sqr = x => x * x
-console.log(sqr(5))
+// let sqr = x => x * x
+// console.log(sqr(5))
+
+let obj = {
+    name: 'Sajib Uzzaman',
+    print: function() {
+        setTimeout( () => {
+            console.log(`hello!! ${this.name}`)
+        }, 1000)
+    }
+}
+
+obj.print()
