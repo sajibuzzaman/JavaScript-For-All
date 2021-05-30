@@ -75,13 +75,26 @@ import '../styles/index.scss'
 // let sqr = x => x * x
 // console.log(sqr(5))
 
-let obj = {
-    name: 'Sajib Uzzaman',
-    print: function() {
-        setTimeout( () => {
-            console.log(`hello!! ${this.name}`)
-        }, 1000)
-    }
-}
+// let obj = {
+//     name: 'Sajib Uzzaman',
+//     print: function() {
+//         setTimeout( () => {
+//             console.log(`hello!! ${this.name}`)
+//         }, 1000)
+//     }
+// }
 
-obj.print()
+// obj.print()
+
+
+// ***Default Parameter***
+
+// function sqr(a=1) {
+//     console.log(a * a)
+// }
+// sqr()
+
+function greet(name='Sajib Uzzaman', msg='Hello') {
+    console.log(`${msg}! ${name}`)
+}
+greet()
