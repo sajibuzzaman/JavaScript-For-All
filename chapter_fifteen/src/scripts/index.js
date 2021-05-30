@@ -62,3 +62,15 @@ import '../styles/index.scss'
 //     console.log(abc)
 // })()
 // // console.log(abc)
+
+// ***Arrow Function***
+
+// function add(a, b) {
+//     return a + b
+// }
+
+let add  = (a, b) => a + b
+console.log(add(5,6))
+
+let sqr = x => x * x
+console.log(sqr(5))
