@@ -193,14 +193,29 @@ import '../styles/index.scss'
 
 
 // ***Object to array and Array to object***
-let obj = {
-    a: 10,
-    b: 20
-}
-console.log(Object.entries(obj))
+// let obj = {
+//     a: 10,
+//     b: 20
+// }
+// console.log(Object.entries(obj))
 
-let objArr = [
-    ['a', 10],
-    ['b', 20]
-]
-console.log(Object.fromEntries(objArr))
+// let objArr = [
+//     ['a', 10],
+//     ['b', 20]
+// ]
+// console.log(Object.fromEntries(objArr))
+
+
+// ***Symbol***
+let s1 = Symbol()
+let s2 =  Symbol('test Symbol')
+
+console.log(s1)
+console.log(s2)
+console.log( s1 === s2)
+
+let toss = {
+    head: Symbol('head'),
+    tail: Symbol('tail')
+}
+console.log(toss.head)
