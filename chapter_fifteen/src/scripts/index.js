@@ -101,32 +101,54 @@ import '../styles/index.scss'
 
 
 // ***Custom Iterable Object***
-let obj = {
-    start: 1,
-    end: 5,
-    [Symbol.iterator]: function() {
-        let currentvalue = this.start
-        const self = this
-        return {
-            next() {
-                return {
-                    done: currentvalue > self.end,
-                    value: currentvalue > self.end ? undefined : currentvalue++
-                }
-            }
-        }
-    }
-}
-
-// for(let v of obj) {
-//     console.log(v)
+// let obj = {
+//     start: 1,
+//     end: 5,
+//     [Symbol.iterator]: function() {
+//         let currentvalue = this.start
+//         const self = this
+//         return {
+//             next() {
+//                 return {
+//                     done: currentvalue > self.end,
+//                     value: currentvalue > self.end ? undefined : currentvalue++
+//                 }
+//             }
+//         }
+//     }
 // }
 
-let iterator = obj[Symbol.iterator]()
-console.log(iterator.next())
-console.log(iterator.next())
-console.log(iterator.next())
-console.log(iterator.next())
-console.log(iterator.next())
-console.log(iterator.next())
-console.log(iterator.next())
+// // for(let v of obj) {
+// //     console.log(v)
+// // }
+
+// let iterator = obj[Symbol.iterator]()
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+
+// ***Rest and Spread Operator
+function sum(...rest) {
+    return rest.reduce((a, b) => a+b)
+}
+
+let x = sum(1, 2, 3)
+console.log(x)
+
+let arr = [1, 2, 3]
+console.log(...arr)     // spread operator
+
+let obj = {
+    a: 1,
+    b: 2,
+    c: 3
+}
+
+let obj2 = {
+    ...obj
+}
+console.log(obj2)
