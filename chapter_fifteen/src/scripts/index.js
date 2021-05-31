@@ -156,15 +156,37 @@ import '../styles/index.scss'
 
 // ***Enhance Object***
 
-let a = 10, b = 20
+// let a = 10, b = 20
 
-let obj = {
-    a,      //a: a,
-    b,      //b: b,
-    print() {
-        console.log(this)
+// let obj = {
+//     a,      //a: a,
+//     b,      //b: b,
+//     print() {
+//         console.log(this)
+//     }
+// }
+
+// // console.log(obj)
+// obj.print()
+
+
+// ***Destructuring***
+let person = {
+    name: 'Sajib Uzzaman',
+    email: 'sajib@gmail.com',
+    address: {
+        city: 'Dhaka',
+        Country: 'Bangladesh'
     }
 }
 
-// console.log(obj)
-obj.print()
+let {name, email, address, address : {city, Country}} = person
+
+console.log(name, email, city, Country)
+
+// array destruturing
+let arr = [1, 2, 3, 4, 5]
+
+let [first, second, , , last] = arr
+
+console.log(first, second, last)
