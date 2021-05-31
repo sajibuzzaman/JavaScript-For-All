@@ -132,23 +132,39 @@ import '../styles/index.scss'
 // console.log(iterator.next())
 
 // ***Rest and Spread Operator
-function sum(...rest) {
-    return rest.reduce((a, b) => a+b)
-}
+// function sum(...rest) {
+//     return rest.reduce((a, b) => a+b)
+// }
 
-let x = sum(1, 2, 3)
-console.log(x)
+// let x = sum(1, 2, 3)
+// console.log(x)
 
-let arr = [1, 2, 3]
-console.log(...arr)     // spread operator
+// let arr = [1, 2, 3]
+// console.log(...arr)     // spread operator
+
+// let obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3
+// }
+
+// let obj2 = {
+//     ...obj
+// }
+// console.log(obj2)
+
+
+// ***Enhance Object***
+
+let a = 10, b = 20
 
 let obj = {
-    a: 1,
-    b: 2,
-    c: 3
+    a,      //a: a,
+    b,      //b: b,
+    print() {
+        console.log(this)
+    }
 }
 
-let obj2 = {
-    ...obj
-}
-console.log(obj2)
+// console.log(obj)
+obj.print()
