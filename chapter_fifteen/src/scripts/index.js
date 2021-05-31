@@ -171,22 +171,36 @@ import '../styles/index.scss'
 
 
 // ***Destructuring***
-let person = {
-    name: 'Sajib Uzzaman',
-    email: 'sajib@gmail.com',
-    address: {
-        city: 'Dhaka',
-        Country: 'Bangladesh'
-    }
+// let person = {
+//     name: 'Sajib Uzzaman',
+//     email: 'sajib@gmail.com',
+//     address: {
+//         city: 'Dhaka',
+//         Country: 'Bangladesh'
+//     }
+// }
+
+// let {name, email, address, address : {city, Country}} = person
+
+// console.log(name, email, city, Country)
+
+// // array destruturing
+// let arr = [1, 2, 3, 4, 5]
+
+// let [first, second, , , last] = arr
+
+// console.log(first, second, last)
+
+
+// ***Object to array and Array to object***
+let obj = {
+    a: 10,
+    b: 20
 }
+console.log(Object.entries(obj))
 
-let {name, email, address, address : {city, Country}} = person
-
-console.log(name, email, city, Country)
-
-// array destruturing
-let arr = [1, 2, 3, 4, 5]
-
-let [first, second, , , last] = arr
-
-console.log(first, second, last)
+let objArr = [
+    ['a', 10],
+    ['b', 20]
+]
+console.log(Object.fromEntries(objArr))
