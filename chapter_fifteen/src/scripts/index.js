@@ -94,7 +94,39 @@ import '../styles/index.scss'
 // }
 // sqr()
 
-function greet(name='Sajib Uzzaman', msg='Hello') {
-    console.log(`${msg}! ${name}`)
+// function greet(name='Sajib Uzzaman', msg='Hello') {
+//     console.log(`${msg}! ${name}`)
+// }
+// greet()
+
+
+// ***Custom Iterable Object***
+let obj = {
+    start: 1,
+    end: 5,
+    [Symbol.iterator]: function() {
+        let currentvalue = this.start
+        const self = this
+        return {
+            next() {
+                return {
+                    done: currentvalue > self.end,
+                    value: currentvalue > self.end ? undefined : currentvalue++
+                }
+            }
+        }
+    }
 }
-greet()
+
+// for(let v of obj) {
+//     console.log(v)
+// }
+
+let iterator = obj[Symbol.iterator]()
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
